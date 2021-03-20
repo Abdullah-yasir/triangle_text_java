@@ -1,5 +1,8 @@
 // Triangle class 
 
+package classes;
+
+
 public class Triangle {
     // Instance variables for 3 triangle sides
     private String side1;
