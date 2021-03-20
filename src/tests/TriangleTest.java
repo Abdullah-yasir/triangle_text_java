@@ -18,9 +18,9 @@ import org.junit.Test;
 
 public class TriangleTest {
 	// info msgs
-	public String scalene = "This is an equilateral triangle. ";
-	public String equilateral = "This is an isosceles triangle. ";
-	public String isosceles = "This is a scalene triangle. ";
+	public String equilateral = "This is an equilateral triangle. ";
+	public String isosceles = "This is an isosceles triangle. ";
+	public String scalene = "This is a scalene triangle. ";
 
 	// err msgs
 	public String sideOneNotInt = "The side 1 is not an integer number.\n\n";
@@ -62,62 +62,77 @@ public class TriangleTest {
 
 	@Test
 	public void test5(){
-		assertEquals(true,true);
+		Triangle tri6 = new Triangle("8","8","1");
+        assertEquals(isosceles,tri6.triangleType());
+		
 	}//end test
 	
 	@Test
 	public void test6(){
-		assertEquals(true,false);
+		Triangle triangle = new Triangle("g","g","6");
+		assertEquals(sideOneNotInt + sideTwoNotInt+ triangleInvalid, triangle.triangleType());
+		
 	}//end test
 	
 	@Test
 	public void test7(){
-		assertEquals(true,true);
+		Triangle triangle = new Triangle("a","b","c");
+		assertEquals(sideOneNotInt + sideTwoNotInt + sideThreeNotInt + triangleInvalid, triangle.triangleType());
+		
 	}//end test
 	
 	@Test
 	public void test8(){
-		assertEquals(true,true);
+		Triangle triangle = new Triangle("-5","5","6");
+		assertEquals(sideNegative + triangleInvalid, triangle.triangleType());
 	}//end test
 	
 	@Test
 	public void test9(){
-		assertEquals(true,true);
+		Triangle triangle = new Triangle("100","90","6");
+		assertEquals(triangleInvalid, triangle.triangleType());
 	}//end test
 	
 	@Test
 	public void test10(){
-		assertEquals(true,true);
+		Triangle triangle = new Triangle("","90","6");
+		assertEquals(sideOneNotInt+triangleInvalid, triangle.triangleType());
 	}//end test	
 	
 	@Test
 	public void test11(){
-		assertEquals(true,true);
+		Triangle triangle = new Triangle("400","390","346");
+		assertEquals(triangleTooBig, triangle.triangleType());
 	}//end test
 	
 	@Test
 	public void test12(){
-		assertEquals(true,true);
+		Triangle triangle = new Triangle("0","0","0");
+		assertEquals(triangleInvalid, triangle.triangleType());
 	}//end test
 	
 	@Test
 	public void test13(){
-		assertEquals(true,true);
+		Triangle triangle = new Triangle("","","");
+		assertEquals(sideOneNotInt+sideTwoNotInt+sideThreeNotInt+triangleInvalid, triangle.triangleType());
 	}//end test
 	
 	@Test
 	public void test14(){
-		assertEquals(true,true);
+		Triangle triangle = new Triangle("-0.9","-890","90000");
+		assertEquals(sideOneNotInt+sideNegative+triangleInvalid+triangleTooBig, triangle.triangleType());
 	}//end test
 	
 	@Test
 	public void test15(){
-		assertEquals(true,true);
+		Triangle triangle = new Triangle("80","80","10.0");
+		assertEquals(sideThreeNotInt + triangleInvalid, triangle.triangleType());
 	}//end test
 	
 	@Test
 	public void test16(){
-		assertEquals(true,true);
+		Triangle triangle = new Triangle("","90","6");
+		assertEquals(sideOneNotInt+triangleInvalid, triangle.triangleType());
 	}//end test	
 	
 	@Test
