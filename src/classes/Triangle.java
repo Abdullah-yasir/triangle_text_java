@@ -46,12 +46,12 @@ public class Triangle {
         
         // Check for a negative side
         if (s1 < 0 || s2 < 0 || s3 < 0) {
-               errMessage += "At least one side is negative!\n";            
+            errMessage += "At least one side is negative!\n";            
         }
         
         // Check for vaide sides
         if ((s1 + s2 <= s3) || (s1 + s3 <= s2) || (s2 + s3 <= s1)) {
-               errMessage += "Not a valid triangle!\n";
+            errMessage += "Not a valid triangle!\n";
         }  
          
         if (s1 + s2 + s3 > 1000) {

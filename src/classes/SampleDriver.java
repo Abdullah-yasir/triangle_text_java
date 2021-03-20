@@ -18,5 +18,13 @@ public class SampleDriver {
         Triangle tri4 = new Triangle("100","90","1");
         System.out.println(tri4.triangleType());
         System.out.println("_____________________");
+
+        Triangle tri5 = new Triangle("-100","10","10");
+        System.out.println(tri5.triangleType());
+        System.out.println("_____________________");
+
+        Triangle tri6 = new Triangle("8","8","1");
+        System.out.println(tri6.triangleType());
+        System.out.println("_____________________");
     }
 }
