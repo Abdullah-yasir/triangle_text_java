@@ -14,5 +14,9 @@ public class SampleDriver {
         Triangle tri3 = new Triangle("h","g","4");
         System.out.println(tri3.triangleType());
         System.out.println("_____________________");
+
+        Triangle tri4 = new Triangle("100","90","1");
+        System.out.println(tri4.triangleType());
+        System.out.println("_____________________");
     }
 }

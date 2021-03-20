@@ -27,7 +27,7 @@ public class TriangleTest {
 	public String sideTwoNotInt = "The side 2 is not an integer number.\n\n";
 	public String sideThreeNotInt = "The side 3 is not an integer number.\n\n";
 	public String sideNegative = "At least one side is negative!\n";
-	public String triangleNotValid = "Not a valid triangle!\n";
+	public String triangleInvalid = "Not a valid triangle!\n";
 	public String triangleTooBig = "This triangle is too big.\n";
 
 	@Test
@@ -55,7 +55,7 @@ public class TriangleTest {
 	public void test4(){
 		// add your code below
 		Triangle triangle = new Triangle("4.23","5","6");
-		assertEquals(sideOneNotInt, triangle.triangleType());   
+		assertEquals(sideOneNotInt + triangleInvalid, triangle.triangleType());   
 		// change above arguments(true, true) to (expectedValue, valueReturned)
 
 	}//end test
