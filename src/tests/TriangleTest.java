@@ -126,30 +126,33 @@ public class TriangleTest {
 	@Test
 	public void test15(){
 		Triangle triangle = new Triangle("80","80","10.0");
-		assertEquals(sideThreeNotInt + triangleInvalid, triangle.triangleType());
+		assertEquals(isosceles, triangle.triangleType());
 	}//end test
 	
 	@Test
 	public void test16(){
-		Triangle triangle = new Triangle("","90","6");
-		assertEquals(sideOneNotInt+triangleInvalid, triangle.triangleType());
+		Triangle triangle = new Triangle("","-90.9","0");
+		assertEquals(sideOneNotInt+sideTwoNotInt+triangleInvalid, triangle.triangleType());
 	}//end test	
 	
 	@Test
 	public void test17(){
-		assertEquals(true,true);
+		Triangle triangle = new Triangle("10 ","10","60");
+		assertEquals(isosceles, triangle.triangleType());
 	}//end test
 	
 	
 	@Test
 	public void test18(){
-		assertEquals(true,true);
+		Triangle triangle = new Triangle("5+5","10","20-10");
+		assertEquals(equilateral, triangle.triangleType());
 	}//end test	
 	
 	
 	@Test
 	public void test19(){
-		assertEquals(true,true);	
+		Triangle triangle = new Triangle("","","");
+		assertEquals(sideOneNotInt+triangleInvalid, triangle.triangleType());	
 	}//end test
 	
 	@Test
