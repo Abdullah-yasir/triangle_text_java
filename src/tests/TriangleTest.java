@@ -151,13 +151,14 @@ public class TriangleTest {
 	
 	@Test
 	public void test19(){
-		Triangle triangle = new Triangle("","","");
-		assertEquals(sideOneNotInt+triangleInvalid, triangle.triangleType());	
+		Triangle triangle = new Triangle("10-0","10/1","10");
+		assertEquals(isosceles, triangle.triangleType());	
 	}//end test
 	
 	@Test
 	public void test20(){
-		assertEquals(true,true);	
+		Triangle triangle = new Triangle("10","-10+20","5");
+		assertEquals(isosceles, triangle.triangleType());
 	}//end test
 
 }
